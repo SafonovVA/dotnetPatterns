@@ -1,14 +1,14 @@
-using Factories.Classes.PizzaIngredientFactories;
-using Factories.Classes.Pizzas;
+using AbstractFactory.Classes.PizzaIngredientFactories;
+using AbstractFactory.Classes.Pizzas;
 
-namespace Factories.Classes.PizzaStores
+namespace AbstractFactory.Classes.PizzaStores
 {
-    public class NYPizzaStore : PizzaStore
+    public class NyPizzaStore : PizzaStore
     {
-        public override Pizza createPizza(string type)
+        protected override Pizza CreatePizza(string type)
         {
             Pizza pizza = null;
-            IPizzaIngredientFactory ingredientFactory = new NYPizzaIngredientFactory();
+            IPizzaIngredientFactory ingredientFactory = new NyPizzaIngredientFactory();
             
             switch (type)
             {
@@ -20,7 +20,7 @@ namespace Factories.Classes.PizzaStores
                     pizza = new ClamPizza(ingredientFactory);
                     pizza.Name = "New York Style Clam Pizza";
                     break;
-            };
+            }
             return pizza;
         }
     }

@@ -1,30 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
-using Factories.Classes.PizzaIngredientFactories.Ingredients;
+using AbstractFactory.Classes.PizzaIngredientFactories.Ingredients;
 
-namespace Factories.Classes.Pizzas
+namespace AbstractFactory.Classes.Pizzas
 {
     public abstract class Pizza
     {
         public string Name { get; set; }
-        public IDough Dough { get; set; }
-        public ISause Sause { get; set; }
+        protected IDough Dough { get; set; }
+        protected ISause Sause { get; set; }
 
-        protected List<string> toppings = new List<string>();
+        protected List<string> Toppings = new List<string>();
 
-        public abstract void prepare();
+        public abstract void Prepare();
 
-        public void bake()
+        public void Bake()
         {
             Console.WriteLine("Bake for 25 minutes at 350");
         }                           
         
-        public void cut()
+        public void Cut()
         {
             Console.WriteLine("Cutting the pizza into diagonal slices");
         }                           
         
-        public void box()
+        public void Box()
         {
             Console.WriteLine("Place pizza in official PizzaStore box");
         }

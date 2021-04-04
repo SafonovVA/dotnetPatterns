@@ -2,6 +2,7 @@
 using Command.Classes;
 using Command.Classes.Commands;
 using Command.Classes.Technic;
+using Command.Interfaces;
 
 namespace Command
 {
@@ -9,8 +10,44 @@ namespace Command
     {
         static void Main()
         {
-            UseSimpleRemoteControl();
-            UseRemoteControl();
+            //UseSimpleRemoteControl();
+            //UseRemoteControl();
+            UseMacroCommandRemoteControl();
+        }
+
+        static void UseMacroCommandRemoteControl()
+        {
+            var light = new Light();
+            var lightOnCommand = new LightOnCommand(light);
+            var lightOffCommand = new LightOffCommand(light);
+
+            var garage = new Garage();
+            var garageDoorOpenCommand = new GarageDoorOpenCommand(garage);
+            var garageDoorCloseCommand = new GarageDoorCloseCommand(garage);
+
+            var ceilingFan = new CeilingFan("Living room");
+            var ceilingFanLowCommand = new CeilingFanLowCommand(ceilingFan);
+            var ceilingFanOffCommand = new CeilingFanOffCommand(ceilingFan);
+
+            ICommand[] partyOn =
+            {
+                lightOnCommand, garageDoorOpenCommand, ceilingFanLowCommand
+            };
+            ICommand[] partyOff =
+            {
+                lightOffCommand, garageDoorCloseCommand, ceilingFanOffCommand
+            };
+
+            var partyOnMacro = new MacroCommand(partyOn);
+            var partyOffMacro = new MacroCommand(partyOff);
+            
+            var remote = new RemoteControl(1);
+            remote.SetCommand(0, partyOnMacro, partyOffMacro);
+
+            Console.WriteLine("----- Pushing macro on -----");
+            remote.OnButtonWasPushed(0);
+            Console.WriteLine("\n----- Pushing macro off -----");
+            remote.OffButtonWasPushed(0);
         }
 
         static void UseRemoteControl()

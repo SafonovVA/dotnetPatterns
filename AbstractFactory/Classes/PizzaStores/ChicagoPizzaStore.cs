@@ -1,11 +1,11 @@
-﻿using Factories.Classes.PizzaIngredientFactories;
-using Factories.Classes.Pizzas;
+﻿using AbstractFactory.Classes.PizzaIngredientFactories;
+using AbstractFactory.Classes.Pizzas;
 
-namespace Factories.Classes.PizzaStores
+namespace AbstractFactory.Classes.PizzaStores
 {
     public class ChicagoPizzaStore : PizzaStore
     {
-        public override Pizza createPizza(string type)
+        protected override Pizza CreatePizza(string type)
         {
             Pizza pizza = null;
             IPizzaIngredientFactory ingredientFactory = new ChicagoPizzaIngredientFactory();
@@ -20,7 +20,7 @@ namespace Factories.Classes.PizzaStores
                     pizza = new ClamPizza(ingredientFactory);
                     pizza.Name = "Chicago Style Clam Pizza";
                     break;
-            };
+            }
             return pizza;
         }
     }

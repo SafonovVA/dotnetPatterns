@@ -1,22 +1,22 @@
 ﻿using System;
-using Factories.Classes.Pizzas;
-using Factories.Classes.PizzaStores;
+using AbstractFactory.Classes.Pizzas;
+using AbstractFactory.Classes.PizzaStores;
 
-namespace Factories
+namespace AbstractFactory
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            PizzaStore nyStore = new NYPizzaStore();
+            PizzaStore nyStore = new NyPizzaStore();
             PizzaStore chicagoStore = new ChicagoPizzaStore();
 
-            Pizza pizza = nyStore.orderPizza("cheese");
+            Pizza pizza = nyStore.OrderPizza("cheese");
             Console.WriteLine($"Order {pizza.Name}");
 
             Console.WriteLine();
 
-            pizza = chicagoStore.orderPizza("cheese");
+            pizza = chicagoStore.OrderPizza("cheese");
             Console.WriteLine($"Order {pizza.Name}");
         }
     }

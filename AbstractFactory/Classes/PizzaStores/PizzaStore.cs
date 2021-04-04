@@ -1,21 +1,21 @@
-using Factories.Classes.Pizzas;
+using AbstractFactory.Classes.Pizzas;
 
-namespace Factories.Classes.PizzaStores
+namespace AbstractFactory.Classes.PizzaStores
 {
     public abstract class PizzaStore
     {
-        public Pizza orderPizza(string type)
+        public Pizza OrderPizza(string type)
         {
-            Pizza pizza = createPizza(type);
+            Pizza pizza = CreatePizza(type);
             
-            pizza.prepare();
-            pizza.bake();
-            pizza.cut();
-            pizza.box();
+            pizza.Prepare();
+            pizza.Bake();
+            pizza.Cut();
+            pizza.Box();
 
             return pizza;
         }
 
-        public abstract Pizza createPizza(string type);
+        protected abstract Pizza CreatePizza(string type);
     }
 }

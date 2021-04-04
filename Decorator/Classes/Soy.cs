@@ -2,7 +2,7 @@ namespace Decorator.Classes
 {
     public class Soy : CondimentDecorator
     {
-        Beverage _beverage;
+        private readonly Beverage _beverage;
 
         public Soy(Beverage beverage)
         {

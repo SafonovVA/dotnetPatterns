@@ -1,4 +1,4 @@
-namespace Factories.Classes.PizzaIngredientFactories.Ingredients
+namespace AbstractFactory.Classes.PizzaIngredientFactories.Ingredients
 {
     public class MarinaraSause : ISause
     {

@@ -1,21 +1,21 @@
 ﻿using System;
-using Factories.Classes.PizzaIngredientFactories;
+using AbstractFactory.Classes.PizzaIngredientFactories;
 
-namespace Factories.Classes.Pizzas
+namespace AbstractFactory.Classes.Pizzas
 {
     class ChicagoStyleCheesePizza : Pizza
     {
-        private IPizzaIngredientFactory ingredientFactory;
+        private readonly IPizzaIngredientFactory _ingredientFactory;
         public ChicagoStyleCheesePizza(IPizzaIngredientFactory ingredientFactory)
         {
-            this.ingredientFactory = ingredientFactory;
+            _ingredientFactory = ingredientFactory;
         }
         
-        public override void prepare()
+        public override void Prepare()
         {
             Console.WriteLine($"Preparing {Name}");
-            Dough = ingredientFactory.createDough();
-            Sause = ingredientFactory.createSause();
+            Dough = _ingredientFactory.CreateDough();
+            Sause = _ingredientFactory.CreateSause();
         } 
     }
 }

@@ -1,10 +1,10 @@
-using Factories.Classes.PizzaIngredientFactories.Ingredients;
+using AbstractFactory.Classes.PizzaIngredientFactories.Ingredients;
 
-namespace Factories.Classes.PizzaIngredientFactories
+namespace AbstractFactory.Classes.PizzaIngredientFactories
 {
     public class ChicagoPizzaIngredientFactory : IPizzaIngredientFactory
     {
-        public IDough createDough() => new CalSomeDough();
-        public ISause createSause() => new OtherSause();
+        public IDough CreateDough() => new CalSomeDough();
+        public ISause CreateSause() => new OtherSause();
     }
 }
