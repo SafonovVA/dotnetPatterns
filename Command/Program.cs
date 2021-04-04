@@ -10,8 +10,8 @@ namespace Command
     {
         static void Main()
         {
-            //UseSimpleRemoteControl();
-            //UseRemoteControl();
+            UseSimpleRemoteControl();
+            UseRemoteControl();
             UseMacroCommandRemoteControl();
         }
 
