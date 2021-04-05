@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adapter", "Adapter\Adapter.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Facade", "Facade\Facade.csproj", "{73E6F0D3-F226-4325-A28D-2F7D46DE17D4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TemplateMethod", "TemplateMethod\TemplateMethod.csproj", "{7E564BE1-5D23-495E-B1D3-6DD5310655DF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,5 +66,9 @@ Global
 		{73E6F0D3-F226-4325-A28D-2F7D46DE17D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E6F0D3-F226-4325-A28D-2F7D46DE17D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E6F0D3-F226-4325-A28D-2F7D46DE17D4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E564BE1-5D23-495E-B1D3-6DD5310655DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E564BE1-5D23-495E-B1D3-6DD5310655DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E564BE1-5D23-495E-B1D3-6DD5310655DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E564BE1-5D23-495E-B1D3-6DD5310655DF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
